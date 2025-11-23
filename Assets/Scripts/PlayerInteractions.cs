@@ -26,7 +26,6 @@ public class PlayerInteractions : MonoBehaviour
                 if(_inputManager._movementActions.Interaction.triggered)
                 {
                     interactionObject.BaseInteract();
-                    //interactionObject.gameObject.transform.position = interactionObject.gameObject.transform.position * 5f;
                 }
             }
         }
