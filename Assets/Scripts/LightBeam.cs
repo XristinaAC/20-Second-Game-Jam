@@ -1,12 +1,15 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 using static UnityEngine.GraphicsBuffer;
 
 public class LightBeam : MonoBehaviour
 {
     [SerializeField] Transform startPoint;
+    [SerializeField] Transform endPoint;
     [SerializeField] LayerMask rayHitMask;
+    [SerializeField] GameObject mirror;
 
     LineRenderer _lightBeam;
 
@@ -28,14 +31,17 @@ public class LightBeam : MonoBehaviour
     void Update()
     {
         _lightBeam.SetPosition(0, startPoint.position);
-        
-        hitRay = new Ray(startPoint.position, startPoint.forward);
+        Vector3 direction = mirror.transform.position - startPoint.position;
+        hitRay = new Ray(startPoint.position, direction);
         RaycastHit hitInfo;
-        Debug.DrawLine(hitRay.origin, hitRay.direction * 300, Color.green);
-        if (Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 300, rayHitMask))
+        bool hit = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 300, rayHitMask);
+        Debug.DrawLine(hitRay.origin, hitInfo.point, Color.green);
+
+        if (hit)
         {
             Debug.Log("Mirror");
             _lightBeam.SetPosition(1, hitInfo.point);
+            _lightBeam.SetPosition(2, endPoint.position);
         }
     }
 }
