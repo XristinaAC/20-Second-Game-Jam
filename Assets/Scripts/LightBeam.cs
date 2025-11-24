@@ -18,17 +18,13 @@ public class LightBeam : MonoBehaviour
         _lightBeam = GetComponent<LineRenderer>();
         _lightBeam.startWidth = 0.1f;
         _lightBeam.endWidth = 0.1f;
-
-        //_lightBeam.startColor = Color.red;
-        // _lightBeam.endColor = Color.red;
-
-        _lightBeam.SetPosition(0, startPoint.position);
+        //_lightBeam.SetPosition(0, startPoint.position);
     }
     Ray hitRay;
     Vector3 point;
 
     // Update is called once per frame
-    void Update()
+    public void CreateBeam()
     {
         _lightBeam.SetPosition(0, startPoint.position);
         Vector3 direction = mirror.transform.position - startPoint.position;
@@ -41,7 +37,7 @@ public class LightBeam : MonoBehaviour
         {
             Debug.Log("Mirror");
             _lightBeam.SetPosition(1, hitInfo.point);
-            _lightBeam.SetPosition(2, endPoint.position);
+            //_lightBeam.SetPosition(2, endPoint.position);
         }
     }
 }
