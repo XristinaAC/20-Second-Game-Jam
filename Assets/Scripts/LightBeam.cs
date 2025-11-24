@@ -27,13 +27,13 @@ public class LightBeam : MonoBehaviour
     {
         Ray hitRay = new Ray(startPoint.position,startPoint.forward);
         RaycastHit hitInfo;
-        Debug.DrawLine(hitRay.origin, hitRay.direction * 20, Color.green);
-        if (Physics.Raycast(hitRay.origin,hitRay.direction, out hitInfo, 20,rayHitMask))
+        Debug.DrawLine(hitRay.origin, hitRay.direction * 3, Color.green);
+        if (Physics.Raycast(hitRay.origin,hitRay.direction, out hitInfo, 3,rayHitMask))
         {
-            //if (hitInfo.collider.GetComponent<Interactable>() != null)
-            //{
+            if (hitInfo.collider.tag == "Player")
+            {
                 Debug.Log("Mirror");
-            //} 
+            } 
             //_lightBeam.SetPosition(1, hitInfo.point);
         }
     }
