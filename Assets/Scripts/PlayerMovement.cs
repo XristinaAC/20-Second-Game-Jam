@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         _playerContorller = GetComponent<CharacterController>();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     void Update()
