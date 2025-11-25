@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float playerSpeed = 1.0f;
     [SerializeField] private float sprintSpeed = 5.0f;
     [SerializeField] private float normalSpeed = 1.0f;
 
+    private float _playerSpeed;
     private CharacterController _playerContorller;
     private Vector3             _playerVelocity;
     private bool                _isGrounded;
@@ -15,11 +15,14 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         _playerContorller = GetComponent<CharacterController>();
+        _playerSpeed = normalSpeed;
     }
 
     void Update()
     {
         _isGrounded = _playerContorller.isGrounded;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void Movement(Vector2 input)
@@ -28,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.x = input.x;
         moveDirection.z = input.y;
 
-        _playerContorller.Move(transform.TransformDirection(moveDirection) * playerSpeed * Time.deltaTime);
+        _playerContorller.Move(transform.TransformDirection(moveDirection) * _playerSpeed * Time.deltaTime);
         _playerVelocity.y += _gravity * Time.deltaTime;
         
         if(_isGrounded && _playerVelocity.y < 0)
@@ -40,11 +43,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void Sprinting()
     {
-        playerSpeed = sprintSpeed;
+        _playerSpeed = sprintSpeed;
     }
 
     public void NotSprinting()
     {
-        playerSpeed = normalSpeed;
+        _playerSpeed = normalSpeed;
     }
 }
