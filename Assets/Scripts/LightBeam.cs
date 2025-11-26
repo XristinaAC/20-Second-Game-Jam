@@ -13,6 +13,8 @@ public class LightBeam : MonoBehaviour
 
     LineRenderer _lightBeam;
 
+    //lineRenderer.positionCount = 3;
+
     void Start()
     {
         _lightBeam = GetComponent<LineRenderer>();
@@ -37,6 +39,7 @@ public class LightBeam : MonoBehaviour
         {
             Debug.Log("Mirror");
             _lightBeam.SetPosition(1, hitInfo.point);
+            //_lightBeam.positionCount += 1;
             //_lightBeam.SetPosition(2, endPoint.position);
         }
     }
