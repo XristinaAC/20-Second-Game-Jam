@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class LightSource : Interactable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private LightBeam _beam;
     private bool _canFreeBeam;
 

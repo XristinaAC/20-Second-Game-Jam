@@ -9,9 +9,12 @@ public class LightBeam : MonoBehaviour
     [SerializeField] Transform startPoint;
     [SerializeField] Transform endPoint;
     [SerializeField] LayerMask rayHitMask;
+    [SerializeField] LayerMask rayHitMaskMirror;
     [SerializeField] GameObject mirror;
+    [SerializeField] GameObject mirrorBase;
 
     LineRenderer _lightBeam;
+    bool ray1 = false;
 
     //lineRenderer.positionCount = 3;
 
@@ -32,15 +35,24 @@ public class LightBeam : MonoBehaviour
         Vector3 direction = mirror.transform.position - startPoint.position;
         hitRay = new Ray(startPoint.position, direction);
         RaycastHit hitInfo;
-        bool hit = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 300, rayHitMask);
+        bool hit = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 50, rayHitMask);
         Debug.DrawLine(hitRay.origin, hitInfo.point, Color.green);
 
         if (hit)
         {
             Debug.Log("Mirror");
             _lightBeam.SetPosition(1, hitInfo.point);
+            ray1 = true;
             //_lightBeam.positionCount += 1;
             //_lightBeam.SetPosition(2, endPoint.position);
+        }
+
+        bool hit2 = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 50, rayHitMaskMirror);
+        if (hit2 && ray1)
+        {
+            _lightBeam.positionCount += 1;
+            _lightBeam.SetPosition(2, endPoint.position);
+            ray1 = false;
         }
     }
 }
