@@ -15,7 +15,7 @@ public class PlayerLook : MonoBehaviour
 
         //CameraRotation - Up and Down
         _xRotation -= (mouseY * Time.deltaTime) * _yMouseSensititity;
-        _xRotation = Mathf.Clamp(_xRotation, -40f, 40f);
+        _xRotation = Mathf.Clamp(_xRotation, -60f, 60f);
         mainCamera.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
 
         //Rotate left and right
