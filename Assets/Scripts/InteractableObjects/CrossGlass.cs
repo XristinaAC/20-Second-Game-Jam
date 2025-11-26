@@ -12,4 +12,9 @@ public class CrossGlass : Interactable
             this.GetComponent<Animator>().SetBool("IsOpening", true);
         }
     }
+
+    public void EndAnimation()
+    {
+        this.GetComponent<Animator>().SetBool("IsOpening", false);
+    }
 }
