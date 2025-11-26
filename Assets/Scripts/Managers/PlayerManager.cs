@@ -3,12 +3,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     private bool _hasCrossKey = false;
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private bool _hasCross = false;
 
     public void SetHasCrossKey(bool hasKey)
     {
@@ -18,5 +13,15 @@ public class PlayerManager : MonoBehaviour
     public bool GetHasCrossKey()
     {
         return _hasCrossKey;
+    }
+
+    public void SetHasCross(bool hasKey)
+    {
+        _hasCross = hasKey;
+    }
+
+    public bool GetHasCross()
+    {
+        return _hasCross;
     }
 }
