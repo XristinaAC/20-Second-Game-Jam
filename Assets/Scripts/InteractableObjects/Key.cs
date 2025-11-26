@@ -7,5 +7,6 @@ public class Key : Interactable
     {
         Debug.Log(PromptMessage);
         _player.GetComponent<PlayerManager>().SetHasCrossKey(true);
+        Destroy(this.gameObject);
     }
 }

@@ -8,7 +8,8 @@ public class CrossGlass : Interactable
         Debug.Log(PromptMessage);
         if(_player.GetComponent<PlayerManager>().GetHasCrossKey())
         {
-            Debug.Log("Player has the key");
+            //Debug.Log("Player has the key");
+            this.GetComponent<Animator>().SetBool("IsOpening", true);
         }
     }
 }
