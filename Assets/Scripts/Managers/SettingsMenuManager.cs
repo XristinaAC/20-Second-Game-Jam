@@ -24,7 +24,7 @@ public class SettingsMenuManager : MonoBehaviour
     private void Start()
     {
         this.gameObject.SetActive(false);
-        graphicsMenu.SetActive(true);
+        //graphicsMenu.SetActive(true);
     }
 
     void Update()
