@@ -57,11 +57,6 @@ public class SettingsMenuManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
-
     public void AudioMenu()
     {
         graphicsMenu.SetActive(false);
