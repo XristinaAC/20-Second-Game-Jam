@@ -35936,6 +35936,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1995326972647620453, guid: e843dd3acceff0e48918b6c8b3b5256f, type: 3}
+      propertyPath: m_Radius
+      value: 0.37373945
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995326972647620453, guid: e843dd3acceff0e48918b6c8b3b5256f, type: 3}
+      propertyPath: m_Center.x
+      value: 0.059022427
+      objectReference: {fileID: 0}
+    - target: {fileID: 1995326972647620453, guid: e843dd3acceff0e48918b6c8b3b5256f, type: 3}
+      propertyPath: m_Center.z
+      value: 0.21590799
+      objectReference: {fileID: 0}
     - target: {fileID: 2184812797486714995, guid: e843dd3acceff0e48918b6c8b3b5256f, type: 3}
       propertyPath: m_Size.x
       value: 1.681112
@@ -38065,7 +38077,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 957775722}
+  m_Mesh: {fileID: 642986274}
 --- !u!33 &1237704548
 MeshFilter:
   m_ObjectHideFlags: 10
