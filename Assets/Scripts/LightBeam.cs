@@ -11,6 +11,7 @@ public class LightBeam : MonoBehaviour
     [SerializeField] Transform endPoint;
     [SerializeField] LayerMask rayHitMask;
     [SerializeField] LayerMask rayHitMaskMirror;
+    [SerializeField] LayerMask ignoreLayer;
     [SerializeField] GameObject mirror;
     [SerializeField] GameObject mirrorBase;
 
@@ -28,18 +29,39 @@ public class LightBeam : MonoBehaviour
     }
     Ray hitRay;
     Vector3 point;
+    bool reflect;
 
     private void Update()
     {
-        RaycastHit hitInfo;
-        bool hit2 = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 10);
-        //bool hit2 = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 20);
-        Debug.DrawLine(hitRay.origin, hitInfo.point, Color.green);
-        if (ray1 && hitInfo.collider && hitInfo.collider.tag == "Mirror")
+        //Physics.Raycast(hitRay.origin, hitRay.direction, 12, ~ignoreLayer);
+        //bool hit2 = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 12);
+        //Debug.DrawLine(hitRay.origin, hitInfo.point, Color.green);
+        if (ray1)//&& hitInfo.collider && !hitInfo.collider.CompareTag("mirrorBase"));
         {
-            _lightBeam.positionCount += 1;
-            _lightBeam.SetPosition(2, endPoint.position);
-            ray1 = false;
+            RaycastHit hitInfo;
+            RaycastHit hitInfo2;
+            bool hit2 = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo,20,~ignoreLayer);
+           
+
+            Debug.Log(hitInfo.collider.gameObject.layer);
+            //if (hitInfo.collider != null && hitInfo.collider.gameObject.layer == 7)
+            //{
+            //    Debug.Log("Mirror2");
+            //}
+
+            bool hit3 = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo2, 20, ~ignoreLayer);
+            if (hitInfo2.collider != null && hitInfo2.transform.gameObject.name == mirrorBase.name)
+            {
+                Debug.Log("Mirror3");
+            }
+
+            if (reflect)
+            {
+                //Debug.Log("MirrorBase");
+                _lightBeam.positionCount += 1;
+                _lightBeam.SetPosition(2, endPoint.position);
+                ray1 = false;
+            }
         }
     }
 
@@ -54,7 +76,6 @@ public class LightBeam : MonoBehaviour
 
         if (hit)
         {
-            Debug.Log("Mirror");
             _lightBeam.SetPosition(1, hitInfo.point);
             ray1 = true;
             //_lightBeam.positionCount += 1;

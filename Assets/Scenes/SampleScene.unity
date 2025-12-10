@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 47478447}
   m_Layer: 8
   m_Name: SimpleObject
-  m_TagString: Untagged
+  m_TagString: mirrorBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,7 +148,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7067608, z: -0, w: 0.70745254}
   m_LocalPosition: {x: 0.50700665, y: -0.09139846, z: 0.00919199}
-  m_LocalScale: {x: 1, y: 1, z: 0.11728998}
+  m_LocalScale: {x: 1, y: 1, z: 0.11729}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1770655908}
@@ -858,6 +858,9 @@ MonoBehaviour:
   rayHitMaskMirror:
     serializedVersion: 2
     m_Bits: 128
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 64
   mirror: {fileID: 1115643482}
   mirrorBase: {fileID: 0}
 --- !u!20 &330585545 stripped
@@ -1216,7 +1219,7 @@ GameObject:
   - component: {fileID: 516794002}
   m_Layer: 8
   m_Name: SimpleObject2
-  m_TagString: Untagged
+  m_TagString: mirrorBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1230,7 +1233,7 @@ Transform:
   m_GameObject: {fileID: 516794000}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.23394409, z: -0, w: 0.9722501}
-  m_LocalPosition: {x: -0.025, y: -0.09139846, z: -0.292}
+  m_LocalPosition: {x: -0.024999619, y: -0.09139846, z: -0.29200006}
   m_LocalScale: {x: 1, y: 1, z: 0.11728998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1603,7 +1606,7 @@ Transform:
   m_GameObject: {fileID: 1015818686}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.2304988, z: -0, w: 0.97307265}
-  m_LocalPosition: {x: -0.038, y: -0.09139846, z: 0.317}
+  m_LocalPosition: {x: -0.038000107, y: -0.09139846, z: 0.3169999}
   m_LocalScale: {x: 1, y: 1, z: 0.117289975}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1628,8 +1631,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1025023, y: 1, z: 2.6494572}
-  m_Center: {x: 0.046098348, y: 0, z: 0.78629875}
+  m_Size: {x: 1.1025023, y: 1, z: 1.8362263}
+  m_Center: {x: 0.046096683, y: 0, z: 0.3796288}
 --- !u!23 &1015818689
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2095,6 +2098,9 @@ MonoBehaviour:
   rayHitMaskMirror:
     serializedVersion: 2
     m_Bits: 0
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 0
   mirror: {fileID: 516794000}
   mirrorBase: {fileID: 0}
 --- !u!120 &1685701761
@@ -2314,7 +2320,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
