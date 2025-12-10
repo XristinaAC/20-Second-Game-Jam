@@ -166,7 +166,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -1249,7 +1249,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -1589,7 +1589,7 @@ GameObject:
   - component: {fileID: 1015818688}
   m_Layer: 7
   m_Name: Mirror
-  m_TagString: Untagged
+  m_TagString: Mirror
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1603,7 +1603,7 @@ Transform:
   m_GameObject: {fileID: 1015818686}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.2304988, z: -0, w: 0.97307265}
-  m_LocalPosition: {x: -0.026, y: -0.09139846, z: 0.293}
+  m_LocalPosition: {x: -0.038, y: -0.09139846, z: 0.317}
   m_LocalScale: {x: 1, y: 1, z: 0.117289975}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1624,12 +1624,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9870763, y: 1, z: 2.2665575}
-  m_Center: {x: 0.0647788, y: 0, z: 1.6503094}
+  m_Size: {x: 1.1025023, y: 1, z: 2.6494572}
+  m_Center: {x: 0.046098348, y: 0, z: 0.78629875}
 --- !u!23 &1015818689
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2277,7 +2277,7 @@ Transform:
   m_GameObject: {fileID: 1770655907}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.84, y: 0.082, z: -3.652}
+  m_LocalPosition: {x: -8.185, y: 0.082, z: -2.591}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

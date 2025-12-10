@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
@@ -28,15 +29,28 @@ public class LightBeam : MonoBehaviour
     Ray hitRay;
     Vector3 point;
 
-    // Update is called once per frame
+    private void Update()
+    {
+        RaycastHit hitInfo;
+        bool hit2 = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 10);
+        //bool hit2 = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 20);
+        Debug.DrawLine(hitRay.origin, hitInfo.point, Color.green);
+        if (ray1 && hitInfo.collider && hitInfo.collider.tag == "Mirror")
+        {
+            _lightBeam.positionCount += 1;
+            _lightBeam.SetPosition(2, endPoint.position);
+            ray1 = false;
+        }
+    }
+
     public void CreateBeam()
     {
         _lightBeam.SetPosition(0, startPoint.position);
         Vector3 direction = mirror.transform.position - startPoint.position;
         hitRay = new Ray(startPoint.position, direction);
         RaycastHit hitInfo;
-        bool hit = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 50, rayHitMask);
-        Debug.DrawLine(hitRay.origin, hitInfo.point, Color.green);
+        bool hit = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 20, rayHitMask);
+        //Debug.DrawLine(hitRay.origin, hitInfo.point, Color.green);
 
         if (hit)
         {
@@ -45,14 +59,6 @@ public class LightBeam : MonoBehaviour
             ray1 = true;
             //_lightBeam.positionCount += 1;
             //_lightBeam.SetPosition(2, endPoint.position);
-        }
-
-        bool hit2 = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo, 50, rayHitMaskMirror);
-        if (hit2 && ray1)
-        {
-            _lightBeam.positionCount += 1;
-            _lightBeam.SetPosition(2, endPoint.position);
-            ray1 = false;
         }
     }
 }
