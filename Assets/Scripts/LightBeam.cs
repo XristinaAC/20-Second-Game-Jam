@@ -41,17 +41,18 @@ public class LightBeam : MonoBehaviour
             RaycastHit hitInfo;
             RaycastHit hitInfo2;
             bool hit2 = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo,20,~ignoreLayer);
-           
 
-            Debug.Log(hitInfo.collider.gameObject.layer);
+
+
             //if (hitInfo.collider != null && hitInfo.collider.gameObject.layer == 7)
             //{
             //    Debug.Log("Mirror2");
             //}
-
+            Debug.Log(hitInfo.collider.gameObject.name);
             bool hit3 = Physics.Raycast(hitRay.origin, hitRay.direction, out hitInfo2, 20, ~ignoreLayer);
             if (hitInfo2.collider != null && hitInfo2.transform.gameObject.name == mirrorBase.name)
             {
+               
                 Debug.Log("Mirror3");
             }
 
