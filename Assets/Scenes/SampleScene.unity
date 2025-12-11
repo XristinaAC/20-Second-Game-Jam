@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 47478445}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7067608, z: -0, w: 0.70745254}
-  m_LocalPosition: {x: 0.50700665, y: -0.09139846, z: 0.00919199}
+  m_LocalPosition: {x: 0.492, y: -0.09139846, z: 0.009}
   m_LocalScale: {x: 1, y: 1, z: 0.11729}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -168,7 +168,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -960,6 +960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2002373867}
   endPoint: {fileID: 572155044}
+  end: {fileID: 1115643486}
   rayHitMask:
     serializedVersion: 2
     m_Bits: 256
@@ -969,7 +970,7 @@ MonoBehaviour:
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 64
-  mirror: {fileID: 1770655907}
+  mirror: {fileID: 1115643482}
   mirrorBase: {fileID: 1015818686}
 --- !u!20 &330585545 stripped
 Camera:
@@ -1341,7 +1342,7 @@ Transform:
   m_GameObject: {fileID: 516794000}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.23394409, z: -0, w: 0.9722501}
-  m_LocalPosition: {x: -0.024999619, y: -0.09139846, z: -0.29200006}
+  m_LocalPosition: {x: -0.017, y: -0.09139846, z: -0.276}
   m_LocalScale: {x: 1, y: 1, z: 0.11728998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1362,7 +1363,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1714,7 +1715,7 @@ Transform:
   m_GameObject: {fileID: 1015818686}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.2304988, z: -0, w: 0.97307265}
-  m_LocalPosition: {x: -0.038000107, y: -0.09139846, z: 0.3169999}
+  m_LocalPosition: {x: -0.02, y: -0.09139846, z: 0.28}
   m_LocalScale: {x: 1, y: 1, z: 0.117289975}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1739,8 +1740,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.009346, y: 1, z: 1.8362262}
-  m_Center: {x: -0.00048193487, y: 0, z: 0.37962878}
+  m_Size: {x: 1.009346, y: 1, z: 4.407302}
+  m_Center: {x: -0.0004819292, y: 0, z: 1.6651722}
 --- !u!23 &1015818689
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1930,13 +1931,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115643482}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.674, y: 0, z: -3.729}
+  m_LocalRotation: {x: -0, y: 0.33712697, z: -0, w: 0.94145924}
+  m_LocalPosition: {x: -8.675, y: 0, z: -3.634}
   m_LocalScale: {x: 1.2418, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 39.404, z: 0}
 --- !u!1 &1182055719
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,6 +2201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 2002373867}
   endPoint: {fileID: 572155044}
+  end: {fileID: 0}
   rayHitMask:
     serializedVersion: 2
     m_Bits: 128
@@ -2390,16 +2392,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770655907}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.185, y: 0.082, z: -2.591}
+  m_LocalRotation: {x: -0, y: 0.90672076, z: -0, w: 0.4217315}
+  m_LocalPosition: {x: -7.93129, y: 0.082, z: -2.5734243}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1015818687}
   - {fileID: 47478446}
   - {fileID: 516794001}
+  - {fileID: 1015818687}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 130.112, z: 0}
 --- !u!114 &1770655909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2413,6 +2415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PromptMessage: Mirror Rotation
+  new_surface: 0
 --- !u!135 &1770655910
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2428,7 +2431,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

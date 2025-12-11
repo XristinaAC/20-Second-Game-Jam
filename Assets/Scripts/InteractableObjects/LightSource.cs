@@ -15,6 +15,7 @@ public class LightSource : Interactable
         if(_canFreeBeam)
         {
             _beam.CreateBeam();
+            _canFreeBeam = false;
         }
     }
 
